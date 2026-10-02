@@ -14,9 +14,11 @@ Valmeryn2 istemcisinin çalışma dosyaları, arayüz betikleri, locale verileri
 
 1. Client source deposunu Windows'ta CMake ve Visual Studio C++ araçlarıyla derleyin.
 2. Sunucu deposundaki güncel `item_proto` ve `mob_proto` dosyalarını, istemcinin `assets/locale` ağacındaki ilgili locale dizinlerine dağıtın.
-3. `assets/root/serverinfo.py` içindeki bağlantı adresini kendi test sunucunuza göre ayarlayın.
-4. `assets` altında `python pack.py --all` çalıştırarak paketleri üretin.
+3. Yerel geliştirme için `assets/root/serverinfo.py` şu portları kullanır: auth `127.0.0.1:24000`, CH1 `24011`, CH2 `24021`.
+4. Yalnızca sunucu listesini değiştirdiyseniz `assets` altında `python pack.py root` çalıştırıp `pack/root.pck` paketini yenileyin. Diğer asset'ler de değiştiyse `python pack.py --all` kullanın.
 5. Aynı revizyondan üretilmiş client executable ve paketlerle giriş akışını doğrulayın.
+
+Veritabanı portu `3309` istemci bağlantı portlarından ayrıdır; client `serverinfo.py` içine yazılmaz.
 
 ## Giriş ve karakter seçimi görselleri
 
